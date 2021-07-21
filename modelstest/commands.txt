@@ -1,0 +1,51 @@
+pip install -r requirements.txt
+
+
+##make model migrations
+python3 manage.py migrate
+
+
+##create a superuser
+python3 manage.py createsuperuser
+
+
+python3 manage.py runserver 
+
+
+##run tests using 
+
+python3 manage.py test 
+
+##or use coverage
+
+coverage run manage.py test app1
+
+##
+Omit virtual environment from test results replacing "env" with the name of your virtualenvironment
+##
+coverage run --omit='*/env/*' manage.py test
+
+
+##view results of the tests using coverage run:
+coverage report
+coverage html
+
+
+###Navigate to the index.html file from the auto created htmlcov directory; right click to copy path and run the path on a brower 
+
+##Run tests by:
+
+## Running the specified module
+python3 manage.py test app1
+
+
+## Running the specified module
+python3 manage.py test app1.tests
+
+
+## Running the specified class
+py manage.py test app1.tests.models
+
+
+##To test the second class from modelstest.py
+python3 manage.py test app1.tests.modelstest.TestNew
